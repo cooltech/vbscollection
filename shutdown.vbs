@@ -3,8 +3,8 @@ Dim Title,ws,nMinutes,nSeconds,sMessage,objShell
 Set objShell = wscript.CreateObject("wscript.Shell")
 Title = "Counting Down to Shutdown"
 Set ws = CreateObject("wscript.Shell")
-nSeconds = InputBox("Seconds to shutdown:")
-nMinutes = InputBox("Minutes to shutdown:")
+nSeconds = InputBox("Seconds to shutdown:","","0")
+nMinutes = InputBox("Minutes to shutdown:","","0")
 'nMinutes = 0
 'nSeconds = 0
 sMessage = "<font color=Red size=2><b>Counting Down to Shutdown"
