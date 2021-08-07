@@ -3,10 +3,16 @@ Dim Title,ws,nMinutes,nSeconds,sMessage,objShell
 Set objShell = wscript.CreateObject("wscript.Shell")
 Title = "Counting Down to Shutdown"
 Set ws = CreateObject("wscript.Shell")
-nSeconds = InputBox("Seconds to shutdown:","","0")
+nSeconds = InputBox("Seconds to shutdown:","","60")
+if nSeconds = "" Then
+msgbox("No seconds specified, please restart the script!")
+Wscript.Quit
+end if
 nMinutes = InputBox("Minutes to shutdown:","","0")
-'nMinutes = 0
-'nSeconds = 0
+if nMinutes = "" Then
+msgbox("No minutes specified, please restart the script!")
+Wscript.Quit
+end if
 sMessage = "<font color=Red size=2><b>Counting Down to Shutdown"
 'Open a chromeless window with message
 with HTABox("lightBlue",100,250,0,630)
