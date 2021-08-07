@@ -4,10 +4,24 @@ Set objShell = wscript.CreateObject("wscript.Shell")
 Title = "Counting Down to Kill Process"
 Set ws = CreateObject("wscript.Shell")
 nPID = InputBox("Process PID to kill:","","PID")
-nSeconds = InputBox("Seconds to kill process:","","0")
+if nPID = "PID" Then
+msgbox("No PID number specified, please restart the script!")
+Wscript.Quit
+end if
+if nPID = "" Then
+msgbox("No PID number specified, please restart the script!")
+Wscript.Quit
+end if
+nSeconds = InputBox("Seconds to kill process:","","60")
+if nSeconds = "" Then
+msgbox("No seconds specified, please restart the script!")
+Wscript.Quit
+end if
 nMinutes = InputBox("Minutes to kill process:","","0")
-'nMinutes = 0
-'nSeconds = 0
+if nMinutes = "" Then
+msgbox("No minutes specified, please restart the script!")
+Wscript.Quit
+end if
 sMessage = "<font color=Yellow style=font-family:consolas size=2><b>Counting Down to Kill Process " &nPID
 'Open a chromeless window with message
 with HTABox("Blue",100,300,0,630)
