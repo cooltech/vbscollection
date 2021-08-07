@@ -3,9 +3,9 @@ Dim Title,ws,nMinutes,nSeconds,sMessage,objShell, nPID
 Set objShell = wscript.CreateObject("wscript.Shell")
 Title = "Counting Down to Kill Process"
 Set ws = CreateObject("wscript.Shell")
-nPID = InputBox("Process PID to kill:")
-nSeconds = InputBox("Seconds to kill process:")
-nMinutes = InputBox("Minutes to kill process:")
+nPID = InputBox("Process PID to kill:","","PID")
+nSeconds = InputBox("Seconds to kill process:","","0")
+nMinutes = InputBox("Minutes to kill process:","","0")
 'nMinutes = 0
 'nSeconds = 0
 sMessage = "<font color=Yellow style=font-family:consolas size=2><b>Counting Down to Kill Process " &nPID
